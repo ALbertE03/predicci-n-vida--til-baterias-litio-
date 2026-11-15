@@ -34,7 +34,8 @@ está en `diseno-experimental-proyecto2-bateria-litio.tex` (fuera de este repo).
 │   └── README_datos.md
 └── aed/
     ├── 01_baterias_individuales.ipynb   # AED por celda (ejecutado)
-    └── 02_conjunto_baterias.ipynb       # AED de las 228 celdas (ejecutado)
+    ├── 02_conjunto_baterias.ipynb       # AED de las 228 celdas (ejecutado)
+    └── 03_consolidado_nulos_y_variables.ipynb  # AED del consolidado (ejecutado)
 ```
 
 ## Cómo reproducirlo
@@ -67,6 +68,12 @@ Requisitos: Python 3.10+, `pandas`, `numpy`, `matplotlib`, `jupyter`
 6. **P000:** 12 archivos vacíos (0 filas), excluidos.
 7. **EIS y PLS** cubren las 228 celdas (la EIS v2 aquí ya trae todas las
    condiciones): son la primera mejora del modelo.
+8. **Calidad del consolidado (AED 03):** nulos solo en `q_chg_Ah` (1) y
+   `q_dischg_Ah` (7), las 8 CU con una sola medida; 0 duplicados; CU
+   consecutivos sin huecos; `soh_cap` negativo en 16 filas de 15 celdas
+   (Q por debajo de 1,5 Ah, no un error); 64 celdas con pequeños aumentos
+   de Q entre CU (mediana 0,017 Ah: ruido, no regeneración); tiempo y
+   ciclos de operación monótonos en las 228 celdas.
 
 ## Cita del dataset
 
