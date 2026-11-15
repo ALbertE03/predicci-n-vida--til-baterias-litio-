@@ -1,19 +1,3 @@
-"""Construye el dataset consolidado de capacidad por celda y CU.
-
-Lee los archivos EOC v2 (result data, DOI 10.35097/1969) y deja una fila
-por celda y check-up (CU), solo con las filas de check-up
-(cyc_condition == 2). Cada CU aporta dos medidas de capacidad
-(carga y descarga); se guardan ambas y su media.
-
-Columnas SoH (ver AED 01 para la justificacion):
-- cap_aged_est_Ah / soh_cap son la misma informacion en dos escalas
-  (en filas CU: soh_cap = (cap - 1.5) / 1.5 * 100, piso del 50%).
-  Aqui se conserva soh_cap (objetivo) y se ELIMINA cap_aged_est_Ah
-  de las variables: es fuga de informacion.
-- soh_nominal = Q / 3.0 * 100 es el SoH del diseno experimental
-  (Q_nom = 3000 mAh). Conversion: soh_nominal = 50 + soh_cap / 2
-  (soh_cap 60 <=> 80% nominal; soh_cap 0 <=> 50% nominal).
-"""
 import re
 from pathlib import Path
 

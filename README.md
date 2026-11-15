@@ -23,7 +23,6 @@ está en `diseno-experimental-proyecto2-bateria-litio.tex` (fuera de este repo).
 ├── README.md
 ├── descarga_dataset.py      # descarga los 10 archivos de RADAR4KIT y los descomprime
 ├── build_datos.py           # construye datos/consolidado_capacidad.csv
-├── build_notebooks.py       # construye y ejecuta los notebooks del AED
 ├── dataset/                 # datos crudos (NO versionados: ~141 MB zip, ~872 MB descomprimido)
 │   ├── cell_eocv2.zip       # capacidad por check-up (93 MB)
 │   ├── cell_eisv2.zip       # impedancia EIS (20 MB)
@@ -43,7 +42,6 @@ está en `diseno-experimental-proyecto2-bateria-litio.tex` (fuera de este repo).
 ```bash
 python descarga_dataset.py   # descarga y descomprime en dataset/
 python build_datos.py        # construye datos/consolidado_capacidad.csv
-python build_notebooks.py    # (re)construye y ejecuta los notebooks del AED
 ```
 
 Requisitos: Python 3.10+, `pandas`, `numpy`, `matplotlib`, `jupyter`
